@@ -2,6 +2,7 @@ package com.javaex.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,7 +17,10 @@ import com.javaex.vo.GuestbookVo;
 public class GuestbookController {
 
 	// 필드
-
+	@Autowired
+	//private GuestbookDao guestDao = new GuestbookDao();
+	private GuestbookDao guestDao;
+	
 	// 생성자
 
 	// 메소드-gs
@@ -29,7 +33,7 @@ public class GuestbookController {
 		System.out.println("GuestbookController>list");
 		
 		// Dao를 통해서 getList(주소)를 가져온다
-		GuestbookDao guestDao = new GuestbookDao();
+		//GuestbookDao guestDao = new GuestbookDao();
 		List<GuestbookVo> gList = guestDao.getList();
 
 		model.addAttribute("gList", gList);
@@ -44,7 +48,7 @@ public class GuestbookController {
 	public String add(@ModelAttribute GuestbookVo vo) {
 		System.out.println("GuestbookController>add");
 
-		GuestbookDao guestDao = new GuestbookDao();
+		//GuestbookDao guestDao = new GuestbookDao();
 		int count = guestDao.insert(vo);
 
 		System.out.println(count);
@@ -71,7 +75,7 @@ public class GuestbookController {
 
 		System.out.println(vo);
 
-		GuestbookDao guestDao = new GuestbookDao();
+		//GuestbookDao guestDao = new GuestbookDao();
 		int count = guestDao.delete(vo);
 
 		System.out.println(count);
@@ -83,8 +87,8 @@ public class GuestbookController {
 	@RequestMapping(value = "/test", method = { RequestMethod.GET, RequestMethod.POST })
 	public String test() {
 		System.out.println("GuestbookController>test");
-
-		return "";
+		
+		return "test";
 	}
 
 }

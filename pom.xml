@@ -5,13 +5,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<!-- 4.3.3.RELEASE 버전을 쓰기 위해 -->
+<!-- 4.3.3.RELEASE 버전을 쓰기 위해 -->
 	<properties>
 		<org.springframework-version>4.3.3.RELEASE</org.springframework-version>
 	</properties>
 
 	<!-- 다운로드 할 것 dependencies 안에 코드 넣기 -->
 	<dependencies>
+	
 		<!-- 1. spring container(core) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -55,6 +56,7 @@
 		</dependency>
 
 	</dependencies>
+
 
 
 	<build>
